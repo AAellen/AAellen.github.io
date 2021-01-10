@@ -1,28 +1,12 @@
 <html>
 <head>
-	
 	{% include head.html %}
 </head>
 
 <body>
-<div class="sidenav mycol">
 
+{% include nav.html %}
 
-    <a href="/">Home</a>
-    {% if user.is_authenticated %}
-    <a href="/create">Create</a>
-    <a href="/view">View To-Dos</a>
-    <a href="/logout">Logout</a>
-    <hr class="mt-4 mb-0">
-    {% block side%}{% endblock %}
-
-    {% else %}
-    <a href="/login">Log In</a>
-    <a href="/register">Sign Up</a>
-    {% endif %}
-
-
-</div>
 <div id="content" class="main">
     <div class="d-flex justify-content-around">
         <div class="container-fluid">
