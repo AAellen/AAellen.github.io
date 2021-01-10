@@ -1,43 +1,9 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{% include head.html %}
-		<title>AAellen</title>
-	</head>
-	<body>
-		<header>
-			<nav class="sidenav mycol">
-
-		    <a href="/" {% if page.url == "/" %}style="color: red;"{% endif %}>Home</a>
-
-		    <hr class="mt-4 mb-0">
-		    <a href="/empty.html"{% if page.url == "/" %}style="color: red;"{% endif %}>Empty</a>
-		    <hr class="mt-0 mb-4">
-
-		   <a href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a>
-		   <a href="cv.html"
-
-
-
-
-		</nav>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-	</header>
-		<div id="content">
-			<h2>Hello World</h2>
-		</div>
-		<footer>
-    		<ul>
-        		<li><a href="mailto:aaellen01@gmail.com">email</a></li>
-        		<li><a href="https://github.com/aaellen">github.com/aaellen</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+---
+layout: default
+title: AAellen
+---
+<div class="blurb">
+	<h1>Hello!</h1>
+	<p>This is a simple portfolio showcasing smoe of the projects that I have done over the years.
+		Read more <a href="/about">about</a> me or <a href="#contact">contact</a> me</p>
+</div>
