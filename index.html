@@ -1,22 +1,47 @@
 <html>
 <head>
-	{{ page.title= ""
+	
 	{% include head.html %}
-	}
 </head>
 
 <body>
+<div class="sidenav mycol">
 
-	---
-	layout: presentation
-	---
-	{% for post in site.posts reversed %}
-		{% include slide.html %}
-		<div class="page-break"></div>
-	{% endfor %}
-	<h1>Hello World</h1>
 
-s
+    <a href="/">Home</a>
+    {% if user.is_authenticated %}
+    <a href="/create">Create</a>
+    <a href="/view">View To-Dos</a>
+    <a href="/logout">Logout</a>
+    <hr class="mt-4 mb-0">
+    {% block side%}{% endblock %}
+
+    {% else %}
+    <a href="/login">Log In</a>
+    <a href="/register">Sign Up</a>
+    {% endif %}
+
+
+</div>
+<div id="content" class="main">
+    <div class="d-flex justify-content-around">
+        <div class="container-fluid">
+            <h1 class="mt-2">Listerino</h1>
+            <hr class="mt-0 mb-4">
+            ---
+			layout: presentation
+			---
+			{% for post in site.posts reversed %}
+				{% include slide.html %}
+				<div class="page-break"></div>
+			{% endfor %}
+			<h1>Hello World</h1>
+        </div>
+    </div>
+</div>
+	
+
+
 </body>
 
 </html>
