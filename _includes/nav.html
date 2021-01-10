@@ -3,9 +3,10 @@
     <a href="/" {% if page.url == "/" %}style="color: red;"{% endif %}>Home</a>
 
     <hr class="mt-4 mb-0">
-    <hr class="mt-0 mb-4"
+    <a href="/empty.html"{% if page.url == "/" %}style="color: red;"{% endif %}>Empty</a>
+    <hr class="mt-0 mb-4">
 
-   <a href="/about.html"    {% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a>
+   <a href="/about.html "{% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a>
 
 
 

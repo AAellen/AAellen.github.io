@@ -13,8 +13,9 @@
             <h1 class="mt-2">Listerino</h1>
             <hr class="mt-0 mb-4">
             ---
-			layout: presentation
+			layout: home
 			---
+
 			{% for post in site.posts reversed %}
 				{% include slide.html %}
 				<div class="page-break"></div>
@@ -24,8 +25,6 @@
     </div>
 </div>
 	
-
-
 </body>
 
 </html>
