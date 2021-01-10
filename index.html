@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		{% include head.html %}
 		<title>AAellen</title>
 	</head>
 	<body>
 		<header>
+			<nav class="sidenav mycol">
+
+		    <a href="/" {% if page.url == "/" %}style="color: red;"{% endif %}>Home</a>
+
+		    <hr class="mt-4 mb-0">
+		    <a href="/empty.html"{% if page.url == "/" %}style="color: red;"{% endif %}>Empty</a>
+		    <hr class="mt-0 mb-4">
+
+		   <a href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a>
+		   <a href="cv.html"
+
+
+
+
+		</nav>
 		<nav>
     		<ul>
         		<li><a href="/">Home</a></li>
@@ -24,34 +40,4 @@
 			</ul>
 		</footer>
 	</body>
-</html>
-<html>
-<head>
-	{% include head.html %}
-</head>
-
-<body>
-
-{% include nav.html %}
-
-<div id="content" class="main">
-    <div class="d-flex justify-content-around">
-        <div class="container-fluid">
-            <h1 class="mt-2">Jekyll</h1>
-            <hr class="mt-0 mb-4">
-            ---
-			layout: home
-			---
-
-			{% for post in site.posts reversed %}
-				{% include slide.html %}
-				<div class="page-break"></div>
-			{% endfor %}
-			<h1>Hello World</h1>
-        </div>
-    </div>
-</div>
-	
-</body>
-
 </html>
