@@ -27,3 +27,4 @@ sass:
 ## solarized variant (dark/light)
 solarized:
   theme:     dark
+theme: jekyll-theme-minimal
