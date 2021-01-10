@@ -20,6 +20,7 @@ plugins:
 title:       AAellen
 author:      AAellen
 description: A portfollio of projects that I have done
+theme: jekyll-theme-cayman
 
 sass:
   style:     :compressed
