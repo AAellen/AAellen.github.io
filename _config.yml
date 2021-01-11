@@ -22,7 +22,7 @@ title:       AAellen
 author:      AAellen
 description: A portfollio of projects that I have done
 theme: jekyll-theme-cayman
-excerpt_separator: <!--/excerpt-->
+excerpt_separator: <!--more-->
 
 sass:
   style:     :compressed
