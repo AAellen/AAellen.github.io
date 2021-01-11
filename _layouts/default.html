@@ -5,42 +5,39 @@
 		<title>AAellen</title>
 	</head>
 	<body>
-	<aside>
-	<ul class="asideList">
-	<li><a href="" class="asideItem">Home</a></li>
-	<hr class="aside"></hr>
+		<aside>
+		<ul class="asideList">
+		<li><a href="" class="asideItem">Home</a></li>
+		<hr class="aside"></hr>
 
-	{% for post in site.posts %}
-	<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
-	<!---title="{{ post.title }}"--->
-	{% endfor %}
+		{% for post in site.posts %}
+		<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
+		<!---title="{{ post.title }}"--->
+		{% endfor %}
 
-	<hr class="aside"></hr>
-	<li><a href="" class="asideItem">About Me</a></li>
-	</ul>
-	<footer class="aside">
-		<h3>Contact Me</h3>
-		<ul>
-			<li><a href="mailto:aaellen01@gmail.com">Email</a></li>
-			<li><a href="https://github.com/aaellen">GitHub</a></li>
+		<hr class="aside"></hr>
+		<li><a href="" class="asideItem">About Me</a></li>
 		</ul>
-	</footer>
-	</aside>
-	<section>
-		<input type="checkbox" id="myInput">
-		<label for="myInput">
-			<span class="bar top"></span>
-			<span class="bar middle"></span>
-			<span class="bar bottom"></span>
-		</label>
+		<footer class="aside">
+			<h3>Contact</h3>
+			<ul>
+				<li><a href="mailto:aaellen01@gmail.com">Email</a></li>
+				<li><a href="https://github.com/aaellen">GitHub</a></li>
+			</ul>
+		</footer>
+		</aside>
+		<section>
+			<input type="checkbox" id="myInput">
+			<label for="myInput">
+				<span class="bar top"></span>
+				<span class="bar middle"></span>
+				<span class="bar bottom"></span>
+			</label>
 
-		<div class="content">
-			{{ content }}
+			<div class="content">
+				{{ content }}
+			</div>
 
-		</div>
-
-	</section>
-		
-		
+		</section>
 	</body>
 </html>

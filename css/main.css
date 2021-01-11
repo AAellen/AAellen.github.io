@@ -6,13 +6,15 @@ body, html {
   font-family: 'Open Sans', sans-serif;
 }
 
-main {
-  height: 100%;
-  width: 100%;
+body a{
+  transition: color .3s .15s ease-in;
+}
+body a:hover{
+  color: #6bfff4;
 }
 
 aside {
-  background-color: #244864;
+  background-color: #35363a;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -41,7 +43,7 @@ label {
 
 .bar {
   display: block;
-  background-color: #244864;
+  background-color: #35363a;
   width: 30px;
   height: 3px;
   border-radius: 5px;
@@ -49,32 +51,41 @@ label {
   transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in, color .5s ease-in;
 }
 
-.bar:hover{
-  color: #6bfff4;
-}
-
-
 .content {
   top: 0;
   bottom: 0;
-  position: absolute;
+  position: relative;
+  height: 100%;
   right: 0;
   left: 0;
-  background-color: #9797e9;
+  background-color: #202020;
+  color: #c0c0cc;
+
   z-index: 2;
   transition: transform .5s ease-in-out;
+}
+
+.showing {
+  position: relative;
+  margin-top: 25px;
+  list-style-type: none;
+}
+.showing li{
+  margin-top: 15px;
+  font-size:15px;
+}
+.showing a{
+  color: inherit;
+  font-size: 20px;
 }
 
 h1 {
   margin: 0;
   position: relative;
-  top: 10%;
-  left: 0;
-  right: 0;
-  transform: translateY(50%);
   text-align: center;
   font-size: 40px;
-  font-color: 9797ff;
+  color: #ccccf0;
+  font-weight: 900;
 }
 
 hr.aside{
@@ -89,10 +100,10 @@ hr.aside{
 footer.aside{
   text-align: right;
   margin-right: 5px;
+  color: #c0c0cc;
 }
 footer.aside h3{
-  color: #9797e9;
-  font-weight: 500px;
+  font-weight: inherit;
   margin-top: 0px;
   margin-bottom: 5px;
 }
@@ -106,12 +117,12 @@ footer.aside ul{
 footer.aside a{
   padding: 0;
   display: block;
-  color: #9797e9;
+  color: #c0c0cc;
   text-decoration: underline;
   font-size: 14px;
   font-weight: 500;
   position: relative;
-  transition: color .3s .15s ease-in, font-size .3s ease-in;
+  transition: font-size .3s ease-in;
 }
 
 
@@ -135,7 +146,7 @@ footer.aside a:hover {
 .asideItem {
   padding: 15px 0;
   display: block;
-  color: #9797e9;
+  color: #c0c0cc;
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
@@ -149,7 +160,6 @@ footer.aside a:hover {
 
 
 .asideItem:hover {
-  color: #6bfff4;
   font-size: 22px;
 }
 
@@ -163,7 +173,7 @@ input[type="checkbox"]:checked ~ .content {
 }
 
 input[type="checkbox"]:checked ~ label .bar {
-  background-color: #9797e9;
+  background-color: #c0c0cc;
 }
 
 input[type="checkbox"]:checked ~ label .top {

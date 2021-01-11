@@ -1,13 +1,12 @@
 ---
-layout: project
-title: Projects
+layout: default
+title: All Projects
 ---
 <h1>Currently Showing Projects</h1>
-<div class="showing">
-
+<ul class="showing">
 	{% for post in site.posts %}
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    {% endfor %}
-
-
-</div>
+		<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+		<br/>{{ post.description }}
+		</li>
+	{% endfor %}
+</ul>
