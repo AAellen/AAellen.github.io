@@ -63,7 +63,6 @@ label {
 
   z-index: 2;
   transition: transform .5s ease-in-out;
-  padding-left: 20px ;
 }
 
 .showing {
@@ -76,17 +75,32 @@ label {
   font-size:15px;
 }
 .showing a{
+  font-size:25px;
+}
+.content a{
   color: inherit;
-  font-size: 20px;
+}
+.content footer{
+  font-size: 12px;
+  margin: 2.5%;
+  margin-bottom:0;
+  padding-top:5px;
+  padding-top: 5px;
+  border-top: 2px solid #35363a;
+  width: 95%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: inherit;
 }
 
 h1 {
+  margin: 0;
   position: relative;
   text-align: center;
   font-size: 40px;
   color: #ccccf0;
   font-weight: 900;
-  padding-top: 50px;
 }
 
 hr.aside{
