@@ -63,6 +63,7 @@ label {
 
   z-index: 2;
   transition: transform .5s ease-in-out;
+  padding-left: 20px ;
 }
 
 .showing {
