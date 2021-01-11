@@ -44,7 +44,7 @@ label {
 .bar {
   display: block;
   background-color: #35363a;
-  width: 30px;
+  width: 35px;
   height: 3px;
   border-radius: 5px;
   margin: 5px auto;
@@ -60,22 +60,8 @@ label {
   left: 0;
   background-color: #202020;
   color: #c0c0cc;
-
   z-index: 2;
   transition: transform .5s ease-in-out;
-}
-
-.showing {
-  position: relative;
-  margin-top: 25px;
-  list-style-type: none;
-}
-.showing li{
-  margin-top: 15px;
-  font-size:15px;
-}
-.showing a{
-  font-size:25px;
 }
 .content a{
   color: inherit;
@@ -93,6 +79,20 @@ label {
   left: 0;
   background-color: inherit;
 }
+
+.showing {
+  position: relative;
+  margin-top: 25px;
+  list-style-type: none;
+}
+.showing li{
+  margin-top: 15px;
+  font-size:15px;
+}
+.showing a{
+  font-size:25px;
+}
+
 
 h1 {
   margin: 0;
@@ -122,13 +122,11 @@ footer.aside h3{
   margin-top: 0px;
   margin-bottom: 5px;
 }
-
 footer.aside ul{
   margin: 0px;
   list-style-type: none;
   padding-left: 0;
 }
-
 footer.aside a{
   padding: 0;
   display: block;
@@ -139,13 +137,10 @@ footer.aside a{
   position: relative;
   transition: font-size .3s ease-in;
 }
-
-
 footer.aside a:hover {
   color: #6bfff4;
   font-size: 16px;
 }
-
 
 .asideList {
   list-style: none;
@@ -155,7 +150,6 @@ footer.aside a:hover {
   text-align: center;
   border-top: 2px solid #6bfff4;
   border-bottom: 2px solid #6bfff4;
-
 }
 
 .asideItem {
@@ -168,29 +162,22 @@ footer.aside a:hover {
   position: relative;
   transition: color .3s .15s ease-in, font-size .3s ease-in;
 }
-
 .small{
   padding: 5px 0;
 }
-
-
 .asideItem:hover {
   font-size: 22px;
 }
 
-
 input[type="checkbox"] {
   display: none;
 }
-
 input[type="checkbox"]:checked ~ .content {
   transform: translateX(20%);
 }
-
 input[type="checkbox"]:checked ~ label .bar {
   background-color: #c0c0cc;
 }
-
 input[type="checkbox"]:checked ~ label .top {
   -webkit-transform: translateY(0px) rotateZ(45deg);
   -moz-transform: translateY(0px) rotateZ(45deg);
@@ -198,7 +185,6 @@ input[type="checkbox"]:checked ~ label .top {
   -o-transform: translateY(0px) rotateZ(45deg);
   transform: translateY(0px) rotateZ(45deg);
 }
-
 input[type="checkbox"]:checked ~ label .bottom {
   -webkit-transform: translateY(-15px) rotateZ(-45deg);
   -moz-transform: translateY(-15px) rotateZ(-45deg);
@@ -206,7 +192,6 @@ input[type="checkbox"]:checked ~ label .bottom {
   -o-transform: translateY(-15px) rotateZ(-45deg);
   transform: translateY(-15px) rotateZ(-45deg);
 }
-
 input[type="checkbox"]:checked ~ label .middle {
   width: 0;
 }
@@ -215,4 +200,3 @@ input[type="checkbox"]:checked ~ label .middle {
   margin: 0 auto;
   width:100%;
 }
-
