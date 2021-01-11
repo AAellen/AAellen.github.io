@@ -80,6 +80,13 @@ label {
   background-color: inherit;
 }
 
+.excerpt{
+  color: #ccccf0;
+}
+.title{
+  color: #6bfff4;
+}
+
 .showing {
   position: relative;
   margin-top: 25px;
