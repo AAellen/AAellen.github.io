@@ -46,7 +46,11 @@ label {
   height: 3px;
   border-radius: 5px;
   margin: 5px auto;
-  transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in;
+  transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in, color .5s ease-in;
+}
+
+.bar:hover{
+  color: #6bfff4;
 }
 
 
@@ -56,7 +60,7 @@ label {
   position: absolute;
   right: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: #9797e9;
   z-index: 2;
   transition: transform .5s ease-in-out;
 }
@@ -82,13 +86,40 @@ hr.aside{
   border-bottom: none;
 }
 
-.asideFooter{
-  color: #9797e9;
-  text-align: center;
-  margin: 10px;
-  font-size: 12px;
- 
+footer.aside{
+  text-align: right;
+  margin-right: 5px;
 }
+footer.aside h3{
+  color: #9797e9;
+  font-weight: 500px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+footer.aside ul{
+  margin: 0px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer.aside a{
+  padding: 0;
+  display: block;
+  color: #9797e9;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: color .3s .15s ease-in, font-size .3s ease-in;
+}
+
+
+footer.aside a:hover {
+  color: #6bfff4;
+  font-size: 16px;
+}
+
 
 .asideList {
   list-style: none;
@@ -109,33 +140,19 @@ hr.aside{
   font-size: 20px;
   font-weight: 500;
   position: relative;
-  transition: color .3s .15s ease-in;
+  transition: color .3s .15s ease-in, font-size .3s ease-in;
 }
 
 .small{
   padding: 5px 0;
 }
 
-.asideItem::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 0;
-  transition: width .3s ease-in;
-  background-color: #9797e9;
-}
 
 .asideItem:hover {
   color: #6bfff4;
+  font-size: 22px;
 }
 
-.asideItem:hover::after {
-  width: 50%;
-  color: #00ff00;
-  background-color: #9797e9;
-}
 
 input[type="checkbox"] {
   display: none;
@@ -174,11 +191,3 @@ input[type="checkbox"]:checked ~ label .middle {
   width:100%;
 }
 
-.ua {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  color: #ff0000;
-  font-size: 2em;
-  z-index: 2;
-}
