@@ -1,0 +1,13 @@
+---
+layout: project
+title: Projects
+---
+<h1>Currently Showing Projects</h1>
+<div class="showing">
+
+	{% for post in site.posts %}
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    {% endfor %}
+
+
+</div>

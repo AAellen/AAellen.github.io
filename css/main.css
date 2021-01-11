@@ -1,51 +1,184 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
 
-.sidenav {
-            height:100%;
-            width:20%;
-            position:fixed;
-            z-index:1;
-            top:0;
-            left:0;
-            background-color:#35363a;
-            overflow-x:hidden;
-            padding-top:20px;
-        }
-        .sidenav a {
-            padding:6px 8px 6px 16px;
-            text-decoration:none;
-            color: #166464;
-            font-size: 25px;
-            display: block;
-        }
-        .sidenav a:hover{
-            color:#6bfff4;
-        }
-        .main{
-            margin-left:20%;
-            padding: 0px 10px;
-            background-color:#3d4043;
-            color:#e1e1e1;
-            min-height:100vh;
+main {
+  height: 100%;
+  width: 100%;
+}
 
-        }
-        .main button{
-            border-radius: 10px;
-            background-color: #166464;
-            border: none;
-            color: white;
-            padding: 5px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
-        .main a {
-            color: #166464;
-        }
+aside {
+  background-color: #244864;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  z-index: 1;
+}
 
-        .main h3 {
-            color: #166464;
-        }
-        .main li{
-            white-space:pre;
-        }
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #707070;
+  overflow: hidden;
+}
+
+label {
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  z-index: 3;
+  position: fixed;
+}
+
+.bar {
+  display: block;
+  background-color: #244864;
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+  transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in;
+}
+
+
+.content {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 2;
+  transition: transform .5s ease-in-out;
+}
+
+h1 {
+  margin: 0;
+  position: relative;
+  top: 10%;
+  left: 0;
+  right: 0;
+  transform: translateY(50%);
+  text-align: center;
+  font-size: 40px;
+  font-color: 9797ff;
+}
+
+hr.aside{
+  border-top: 2px dashed #6bfff4;
+  background-color: none;
+  width: 50%;
+  padding:0;
+  height:0;
+  border-bottom: none;
+}
+
+.asideFooter{
+  color: #9797e9;
+  text-align: center;
+  margin: 10px;
+  font-size: 12px;
+ 
+}
+
+.asideList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 2px solid #6bfff4;
+  border-bottom: 2px solid #6bfff4;
+
+}
+
+.asideItem {
+  padding: 15px 0;
+  display: block;
+  color: #9797e9;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: color .3s .15s ease-in;
+}
+
+.small{
+  padding: 5px 0;
+}
+
+.asideItem::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  transition: width .3s ease-in;
+  background-color: #9797e9;
+}
+
+.asideItem:hover {
+  color: #6bfff4;
+}
+
+.asideItem:hover::after {
+  width: 50%;
+  color: #00ff00;
+  background-color: #9797e9;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .content {
+  transform: translateX(20%);
+}
+
+input[type="checkbox"]:checked ~ label .bar {
+  background-color: #9797e9;
+}
+
+input[type="checkbox"]:checked ~ label .top {
+  -webkit-transform: translateY(0px) rotateZ(45deg);
+  -moz-transform: translateY(0px) rotateZ(45deg);
+  -ms-transform: translateY(0px) rotateZ(45deg);
+  -o-transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked ~ label .bottom {
+  -webkit-transform: translateY(-15px) rotateZ(-45deg);
+  -moz-transform: translateY(-15px) rotateZ(-45deg);
+  -ms-transform: translateY(-15px) rotateZ(-45deg);
+  -o-transform: translateY(-15px) rotateZ(-45deg);
+  transform: translateY(-15px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked ~ label .middle {
+  width: 0;
+}
+
+.middle {
+  margin: 0 auto;
+  width:100%;
+}
+
+.ua {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #ff0000;
+  font-size: 2em;
+  z-index: 2;
+}

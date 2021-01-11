@@ -5,25 +5,7 @@
 		<title>AAellen</title>
 	</head>
 	<body>
-		<header>
-			<nav class="sidenav mycol">
-
-		    <a href="/" {% if page.url == "/" %}style="color: red;"{% endif %}>Home</a>
-
-		    <hr class="mt-4 mb-0">
-		    <ul class="projects">
-
-			  {% for post in site.posts %}
-			    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-			  {% endfor %}
-			</ul>
-		    <hr class="mt-0 mb-4">
-
-		   <a href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a>
-		   <a href="/cv.html" syle="color :red">CV</a>
-
-		</nav>
-	</header>
+		{% include nav.hmtl %}
 		<div id="content">
 			{{ content }}
 		</div>

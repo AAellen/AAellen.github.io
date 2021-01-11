@@ -1,14 +1,32 @@
-<div class="sidenav mycol">
-
+<nav class="sidenav mycol">
     <a href="/" {% if page.url == "/" %}style="color: red;"{% endif %}>Home</a>
 
-    <hr class="mt-4 mb-0">
-    <a href="/empty.html"{% if page.url == "/" %}style="color: red;"{% endif %}>Empty</a>
-    <hr class="mt-0 mb-4">
+        <hr class="mt-4 mb-0">
+        
 
-   <a href="/about.html "{% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a>
+          {% for post in site.posts %}
+            <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+          {% endfor %}
+        
+        <hr class="mt-0 mb-4">
 
+       <a href="/about" {% if page.url == "/about" %}style="color: red;"{% endif %}>About</a>
+       <a href="/cv" syle="color :red">CV</a>
+    </ul>
 
+</nav>
+<aside>
+    <ul class="asideList">
+      <li><a href="" class="asideItem">Home</a></li>
+      <hr class="aside"></hr>
 
+      {% for post in site.posts %}
+        <li><a class="asideItem" href="{{ post.url }}" >{{ post.title }}</a></li>
+        <!---title="{{ post.title }}"--->
+      {% endfor %}
 
-</div>
+    <hr class="aside"></hr>
+      <li><a href="" class="asideItem">About Me</a></li>
+    </ul>
+    <footer class="aside">
+</aside>
