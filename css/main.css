@@ -81,12 +81,12 @@ label {
 }
 
 h1 {
-  margin: 0;
   position: relative;
   text-align: center;
   font-size: 40px;
   color: #ccccf0;
   font-weight: 900;
+  padding-top: 50px;
 }
 
 hr.aside{
