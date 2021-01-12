@@ -38,11 +38,11 @@
 
 		<div class="content">
 			<h1 class="title">Project: {{ page.title }}</h1>
-			<h2 class="excerpt">{{ post.excerpt }}</h2>
-			<div id="debugContent">{{ post.content }}</div>
-			<div id="debugExcerpt">{{ post.excerpt }}</div>
+			<h2 class="excerpt">{{ page.excerpt }}</h2>
+			<div id="debugContent">{{ page.content }}</div>
+			<div id="debugExcerpt">{{ page.excerpt }}</div>
 
-			{{ post.content | remove: post.excerpt }}
+			{{ page.content | remove: page.excerpt }}
 		</div>
 
 	</section>
