@@ -19,10 +19,10 @@
 		<li><a href="/about" class="asideItem">About Me</a></li>
 		</ul>
 
-		<footer class="aside" id="contact">
+		<footer class="aside">
 			<h3>Contact</h3>
 			<ul>
-				<li><a href="mailto:aaellen01@gmail.com">Email</a></li>
+				<li><a id="email" href="mailto:aaellen01@gmail.com">Email</a></li>
 				<li><a href="https://github.com/aaellen">GitHub</a></li>
 			</ul>
 		</footer>
@@ -38,12 +38,17 @@
 
 		<div class="content">
 			<h1 class="title">Project: {{ page.title }}</h1>
-			<h2 class="excerpt">{{ page.excerpt | remove: '<p>' | remove: '</p>' }}</h2>
+			<h2 class="excerpt">{{ page.project_desc }}</h2>
 
-			{{ page.content | remove_first: page.excerpt }}
-			<footer>Here is the <a href="github.com/aaellen/{{ page.title }}">source code</a>.Read more <a href="/about">about</a> me or <a href="#contact">contact</a> me</p></footer>
+			{{ page.content }}
+			{% if page.project_url != "" %}
+			<footer>Find the<a href="{{ page.project_url }}">source code</a> of the project. Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
+			{% else %}
+			<footer>The source code for this project is not available<a href="{{ page.project_url }}">source code</a>.Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
+{% endif %}
 		</div>
 
 	</section>
+
 </body>
 </html>
