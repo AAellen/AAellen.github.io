@@ -3,11 +3,12 @@ body, html {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Monaco', monospace;
 }
 
 body a{
   transition: color .3s .15s ease-in;
+  text-decoration-style: underline;
 }
 body a:hover{
   color: #6bfff4;
@@ -62,6 +63,7 @@ label {
   color: #c0c0cc;
   z-index: 2;
   transition: transform .5s ease-in-out;
+  padding-left:20px;
 }
 .content a{
   color: inherit;
@@ -70,7 +72,6 @@ label {
   font-size: 12px;
   margin: 2.5%;
   margin-bottom:0;
-  padding-top:5px;
   padding-top: 5px;
   border-top: 2px solid #35363a;
   width: 95%;
@@ -78,6 +79,9 @@ label {
   bottom: 0;
   left: 0;
   background-color: inherit;
+  padding-left: 1%;
+  height: 5%;
+  min-height: 25px;
 }
 
 .excerpt{
@@ -85,6 +89,9 @@ label {
 }
 .title{
   color: #6bfff4;
+  margin-left: 55px;
+  padding-top: 8px;
+  padding-right: 12px;
 }
 
 .showing {
@@ -102,12 +109,11 @@ label {
 
 
 h1 {
-  margin: 0;
   position: relative;
   text-align: center;
   font-size: 40px;
   color: #ccccf0;
-  font-weight: 900;
+  font-weight: 750;
 }
 
 hr.aside{
@@ -138,7 +144,6 @@ footer.aside a{
   padding: 0;
   display: block;
   color: #c0c0cc;
-  text-decoration: underline;
   font-size: 14px;
   font-weight: 500;
   position: relative;
