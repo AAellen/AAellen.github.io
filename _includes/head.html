@@ -5,3 +5,26 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="{{site.baseurl}}/css/main.css">
+
+<!--Scripts for animating the contact link-->
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(document).ready(function () {
+    console.log("doc")
+    $("a.contact").click(function () {
+        $("input:checkbox").prop('checked', true);
+
+      setTimeout(function(){
+        $('footer.aside h3').animate({color: "#6cfff4", fontSize:"30px"}, 200 );
+        $('footer.aside a').animate({color: "#6cfff4", fontSize:"22px"}, 200 );
+      }, 300);
+
+      setTimeout(function(){
+        $('footer.aside h3').animate({color: "#c0c0cc", fontSize:"1.17em"}, 1000);
+        $('footer.aside a').animate({color: "#c0c0cc", fontSize:"14px"}, 1000);
+
+      }, 1000);
+    });
+  });
+</script>
