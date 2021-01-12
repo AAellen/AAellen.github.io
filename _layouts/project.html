@@ -38,11 +38,12 @@
 
 		<div class="content">
 			<h1 class="title">Project: {{ page.title }}</h1>
-			<h2 class="excerpt">{{ page.excerpt }}</h2>
+			<h2 class="excerpt">{{ page.excerpt | remove: '<p>' | remove: '</p>'}} }}</h2>
 			<div id="debugContent">{{ page.content }}</div>
 			<div id="debugExcerpt">{{ page.excerpt }}</div>
 
 			{{ page.content | remove: page.excerpt }}
+			<footer>Here is the <a href="github.com/aaellen/{{ page.title }}">source code</a>.Read more <a href="/about">about</a> me or <a href="#contact">contact</a> me</p></footer>
 		</div>
 
 	</section>
