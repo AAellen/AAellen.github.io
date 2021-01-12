@@ -42,7 +42,7 @@
 
 			{{ page.content }}
 			{% if page.project_url != "" %}
-			<footer>Find the <a href="{{ page.project_url }}">source code</a> of the project. Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
+			<footer>Find the <a href="{{ page.project_url }}">source code</a> '{{ page.project_url }}'of the project. Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
 			{% else %}
 			<footer>The source code for this project is not available<a href="{{ page.project_url }}">source code</a>.Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
 {% endif %}
