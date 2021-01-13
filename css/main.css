@@ -71,17 +71,18 @@ label {
 .content footer{
   font-size: 12px;
   margin: 2.5%;
-  margin-bottom:0;
-  padding-top: 5px;
+  margin-bottom: 3px;
+  padding-top: 3px;
+  padding-left: 1%;
+  padding-right: 1%;
   border-top: 2px solid #35363a;
+  color: #8b8b92;
   width: 95%;
   position: fixed;
   bottom: 0;
   left: 0;
   background-color: inherit;
-  padding-left: 1%;
-  height: 5%;
-  min-height: 25px;
+
 }
 
 .project_desc{
