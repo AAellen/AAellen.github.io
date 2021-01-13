@@ -62,7 +62,7 @@ label {
   background-color: #202020;
   color: #c0c0cc;
   z-index: 2;
-  transition: transform .5s ease-in-out, padding-right: .5s ease-in-out;
+  transition: transform .5s ease-in-out, padding-right .5s ease-in-out;
   padding-left:20px;
 }
 .content a{
