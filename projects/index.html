@@ -1,0 +1,11 @@
+---
+layout: default
+title: All Projects
+---
+<ul class="showing">
+	{% for post in site.posts %}
+		<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+		<br/>{{ post.exerpt }}
+		</li>
+	{% endfor %}
+</ul>

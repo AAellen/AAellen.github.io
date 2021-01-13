@@ -1,0 +1,218 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Monaco', monospace;
+}
+
+body a{
+  transition: color .3s .15s ease-in;
+  text-decoration: underline;
+}
+body a:hover{
+  color: #6bfff4;
+}
+
+aside {
+  background-color: #35363a;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: max(20%, 145px);
+  z-index: 1;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #707070;
+  overflow: hidden;
+}
+
+label {
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  z-index: 3;
+  position: fixed;
+}
+
+.bar {
+  display: block;
+  background-color: #35363a;
+  width: 35px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+  transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in, color .5s ease-in;
+}
+
+.content {
+  top: 0;
+  bottom: 0;
+  position: relative;
+  height: 100%;
+  right: 0;
+  left: 0;
+  background-color: #202020;
+  color: #c0c0cc;
+  z-index: 2;
+  transition: transform .5s ease-in-out, padding-right .5s ease-in-out;
+  padding-left:20px;
+}
+.content a{
+  color: inherit;
+}
+.content footer{
+  font-size: 12px;
+  margin: 2.5%;
+  margin-bottom: 0;
+  padding-top: 3px;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-top: 2px solid #35363a;
+  color: #8b8b92;
+  width: 95%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: inherit;
+}
+
+.project_desc{
+  color: #ccccf0;
+}
+.title{
+  color: #6bfff4;
+  margin-left: 55px;
+  padding-top: 8px;
+  padding-right: 12px;
+}
+
+.showing {
+  position: relative;
+  margin-top: 25px;
+  list-style-type: none;
+}
+.showing li{
+  margin-top: 15px;
+  font-size:15px;
+}
+.showing a{
+  font-size:25px;
+}
+
+
+h1 {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  color: #ccccf0;
+  font-weight: 750;
+}
+
+hr.aside{
+  border-top: 2px dashed #6bfff4;
+  background-color: none;
+  width: 50%;
+  padding:0;
+  height:0;
+  border-bottom: none;
+}
+
+footer.aside{
+  text-align: right;
+  margin-right: 5px;
+  color: #c0c0cc;
+}
+footer.aside h3{
+  font-weight: inherit;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+footer.aside ul{
+  margin: 0px;
+  list-style-type: none;
+  padding-left: 0;
+}
+footer.aside a{
+  padding: 0;
+  display: block;
+  color: #c0c0cc;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: font-size .3s ease-in;
+}
+footer.aside a:hover {
+  color: #6bfff4;
+  font-size: 16px;
+}
+
+.asideList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 2px solid #6bfff4;
+  border-bottom: 2px solid #6bfff4;
+}
+
+.asideItem {
+  padding: 15px 0;
+  display: block;
+  color: #c0c0cc;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: color .3s .15s ease-in, font-size .3s ease-in;
+}
+.small{
+  padding: 5px 0;
+}
+.asideItem:hover {
+  font-size: 22px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked ~ .content {
+  transform: translateX(max(20%, 145px));
+  padding-right: max(20%, 145px);
+}
+input[type="checkbox"]:checked ~ .title {
+  margin-left: 0;
+}
+input[type="checkbox"]:checked ~ label .bar {
+  background-color: #c0c0cc;
+}
+input[type="checkbox"]:checked ~ label .top {
+  -webkit-transform: translateY(0px) rotateZ(45deg);
+  -moz-transform: translateY(0px) rotateZ(45deg);
+  -ms-transform: translateY(0px) rotateZ(45deg);
+  -o-transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(45deg);
+}
+input[type="checkbox"]:checked ~ label .bottom {
+  -webkit-transform: translateY(-15px) rotateZ(-45deg);
+  -moz-transform: translateY(-15px) rotateZ(-45deg);
+  -ms-transform: translateY(-15px) rotateZ(-45deg);
+  -o-transform: translateY(-15px) rotateZ(-45deg);
+  transform: translateY(-15px) rotateZ(-45deg);
+}
+input[type="checkbox"]:checked ~ label .middle {
+  width: 0;
+}
+
+.middle {
+  margin: 0 auto;
+  width:100%;
+}

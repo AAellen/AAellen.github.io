@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+		{% include head.html %}
+	</head>
+	<body>
+		<aside>
+		<ul class="asideList">
+		<li><a href="/" class="asideItem">Home</a></li>
+		<hr class="aside"></hr>
+
+		{% for post in site.posts %}
+		<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
+		<!---title="{{ post.title }}"--->
+		{% endfor %}
+
+		<hr class="aside"></hr>
+		<li><a href="/about" class="asideItem">About Me</a></li>
+		</ul>
+
+		<footer class="aside">
+			<h3>Contact</h3>
+			<ul>
+				<li><a id="email" href="mailto:aaellen01@gmail.com">Email</a></li>
+				<li><a href="https://github.com/aaellen">GitHub</a></li>
+			</ul>
+		</footer>
+		</aside>
+	<section>
+
+		<input type="checkbox" id="myInput">
+		<label for="myInput">
+			<span class="bar top"></span>
+			<span class="bar middle"></span>
+			<span class="bar bottom"></span>
+		</label>
+
+		<div class="content">
+			<h1 class="title">Project: {{ page.title }}</h1>
+			<h2 class="project_desc">{{ page.project_desc }}</h2>
+
+			{{ page.content }}
+			{% if page.project_url != "" %}
+			<footer>Find the <a href="{{ page.project_url }}">source code</a>of the project. Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
+			{% else %}
+			<footer>The source code for this project is not available.Read more <a href="/about">about</a> me or <a class="contact" href="#">contact</a> me</p></footer>
+{% endif %}
+		</div>
+
+	</section>
+
+</body>
+</html>

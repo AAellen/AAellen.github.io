@@ -1,0 +1,33 @@
+timezone:    Europe/Berlin
+future:      false
+# Set baseurl to the base path of the site eg "/mytalk"
+# baseurl:     "/github-slideshow"
+# The allowed values are 'rouge', 'pygments' or null.
+highlighter: rouge
+# markdown - Valid options are [ maruku | rdiscount | kramdown | redcarpet ]
+name: AAellen # portfolio
+markdown: kramdown
+lsi:         false
+permalink:   "/:title"
+
+kramdown:
+  ## for german: "sbquo,lsquo,bdquo,ldquo"
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+plugins:
+  - jemoji
+
+## personalize your slide show
+title:       AAellen
+author:      AAellen
+description: A portfollio of projects that I have done
+theme: jekyll-theme-cayman
+#excerpt_separator: <!--more-->
+
+sass:
+  style:     :compressed
+
+## solarized variant (dark/light)
+solarized:
+  theme:     dark
+theme: jekyll-theme-minimal
