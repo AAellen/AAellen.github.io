@@ -20,7 +20,7 @@ aside {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 20%;
+  width: max(20%, 145px);
   z-index: 1;
 }
 
@@ -185,7 +185,11 @@ input[type="checkbox"] {
   display: none;
 }
 input[type="checkbox"]:checked ~ .content {
-  transform: translateX(20%);
+  transform: translateX(max(20%, 145px));
+  padding-right: max(20%, 145px);
+}
+input[type="checkbox"]:checked ~ .title {
+  margin-left: 0;
 }
 input[type="checkbox"]:checked ~ label .bar {
   background-color: #c0c0cc;
