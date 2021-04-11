@@ -5,3 +5,9 @@ layout: default
 <h2 class="project_desc">{{ page.project_desc }}</h2>
 
 {{ content }}
+
+{% if page.project_url != "" %}
+{% include footer.html content="View the <a href="{{ page.project_url }}">source code</a> of this project." %}
+{% else %}
+{% include footer.html content="The source code for this project is not available." %}
+{% endif %}
