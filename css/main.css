@@ -99,11 +99,23 @@ label {
 .project_desc{
   color: #ccccf0;
 }
-.title{
+
+#title_div{
+  position:relative;
+  background-image: url("assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 30%;
+  width: 100%;
+  display: table;
+  text-align: center;
+}
+
+h1.title{
   color: #6bfff4;
-  margin-left: 55px;
-  padding-top: 8px;
-  padding-right: 12px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .showing {
