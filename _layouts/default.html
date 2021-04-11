@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		{% if page.title == "AAellen"%}
+		<title>AAellen</title>
+		{% else %}
 		<title>AAellen - {{ page.title }}</title>
+		{% endif %}
 		{% include head.html %}
 	</head>
 	<body>
