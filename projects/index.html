@@ -4,8 +4,8 @@ title: All Projects
 ---
 <ul class="showing">
 	{% for post in site.posts %}
-		<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-		<br/>{{ post.exerpt }}
+		<li><a href="{{ post.url }}" title="View Project: {{ post.title }}">{{ post.title }}</a>
+		<br/>{{ post.project_desc }}
 		</li>
 	{% endfor %}
 </ul>
