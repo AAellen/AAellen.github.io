@@ -1,6 +1,6 @@
 # AAellen.github.io
-## A simple repository to showcase some projects made by [@AAellen](https://github.com/AAellen)
-In order to see all of the showcased projects please visit https://aaellen.github.io
+## A simple website repository to showcase some projects made by [@AAellen](https://github.com/AAellen)
+Website can be found at https://aaellen.github.io
 
 ## Currently Showing
 
