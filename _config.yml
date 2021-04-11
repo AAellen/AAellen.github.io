@@ -17,10 +17,8 @@ kramdown:
 plugins:
   - jemoji
 
-## personalize your slide show
-title:       AAellen
-author:      AAellen
-description: A portfollio of projects that I have done
+title: AAellen
+author: Alex Aellen
 theme: jekyll-theme-cayman
 #excerpt_separator: <!--more-->
 
