@@ -1,5 +1,5 @@
 # AAellen.github.io
-## A simple website repository to showcase some projects made by @[AAellen](https://github.com/AAellen)
+## A simple website repository to showcase some projects made by [@AAellen](https://github.com/AAellen)
 Website can be found at https://aaellen.github.io
 
 ## Currently Showing
