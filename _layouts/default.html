@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>AAellen</title><!---page.title--->
+		<title>AAellen - {{ page.title }}</title>
 		{% include head.html %}
 	</head>
 	<body>
@@ -12,7 +12,6 @@
 
 		{% for post in site.posts %}
 		<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
-		<!---title="{{ post.title }}"--->
 		{% endfor %}
 
 		<hr class="aside" id="contact"></hr>
