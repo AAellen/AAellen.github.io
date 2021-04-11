@@ -9,6 +9,7 @@ name: AAellen # portfolio
 markdown: kramdown
 lsi:         false
 permalink:   "/:title"
+url: "https://aaellen.github.io/" 
 
 kramdown:
   ## for german: "sbquo,lsquo,bdquo,ldquo"
