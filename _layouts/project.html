@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<div class="project_source">
+    {% if page.project_url != "" %}
+    View the <a href="{{ page.project_url }}">source code</a> for this project.
+    {% else %}
+    The source code for this project is not yet available.
+    {% endif %}
+</div>
+
 <h2 class="project_desc">{{ page.project_desc }}</h2>
 
 {{ content }}

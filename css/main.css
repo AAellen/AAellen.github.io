@@ -7,10 +7,11 @@ body, html {
 }
 
 body a{
-  transition: color .3s .15s ease-in;
+  transition: color 1.5s ease-out;
   text-decoration: underline;
 }
 body a:hover{
+  transition: color 0.5s ease-in;
   color: #6bfff4;
 }
 
@@ -75,13 +76,24 @@ label {
   padding-top: 3px;
   padding-left: 1%;
   padding-right: 1%;
-  border-top: 2px solid #35363a;
+  border-top: 1px dashed #35363a;
   color: #8b8b92;
   width: 95%;
   position: fixed;
   bottom: 0;
   left: 0;
   background-color: inherit;
+}
+
+.project_source{
+  font-size: 12px;
+  color: #8b8b92;
+  width: 95%;
+  border-top: 2px dashed #35363a;
+  border-bottom: 2px dashed #35363a;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 0.5%;
 }
 
 .project_desc{
