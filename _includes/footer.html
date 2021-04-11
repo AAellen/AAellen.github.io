@@ -1,9 +1,9 @@
-{% if include.content=="project" %}
-    {% if include.url =="" %}
-    <footer>The source code for this project is not available.
-    {% else %}
-    <footer>View the <a href={{include.url}}>source code</a> of this project.
-    {% endif %}
+{% if include.content == "project" %}
+{% if include.url == "" %}
+<footer>The source code for this project is not available.
+{% else %}
+<footer>View the <a href={{include.url}}>source code</a> of this project.
+{% endif %}
 {% else %}
 <footer>
 {% endif %}
