@@ -1,15 +1,13 @@
 ---
 layout: default
 ---
-<div class="content">
-	<h1 class="title">Project: {{ page.title }}</h1>
-	<h2 class="project_desc">{{ page.project_desc }}</h2>
+<h1 class="title">Project: {{ page.title }}</h1>
+<h2 class="project_desc">{{ page.project_desc }}</h2>
 
-	{{ page.content }}
+{{ content }}
 
-	{% if page.project_url != "" %}
-	{% include footer.html content="Find the <a href="{{ page.project_url }}">source code</a>of the project." %}
-	{% else %}
-	{% include footer.html content="The source code for this project is not available." %}
-	{% endif %}
-</div>
+{% if page.project_url != "" %}
+{% include footer.html content="Find the <a href="{{ page.project_url }}">source code</a>of the project." %}
+{% else %}
+{% include footer.html content="The source code for this project is not available." %}
+{% endif %}
