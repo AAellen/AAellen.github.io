@@ -1,12 +1,6 @@
 ---
 layout: default
-title: "Project"
 ---
-<h2 class="project_desc">Description: {{ page.project_desc }}</h2>
+<h2 class="project_desc">{{ page.project_desc }}</h2>
 
 {{ content }}
-
-{% capture capture_url %}
-{{ page.project_url }}
-{% endcapture %}
-{% include footer.html content="project" url=capture_url %}

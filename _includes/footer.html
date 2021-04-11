@@ -1,5 +1,7 @@
-{{ include.content }}
 {{ include.url }}
-<footer>{{ include.content | default: 1 }} {{ include.url | default: 2 }}
+<footer>
+{% if include.url != "" %}
+    View the <a href="{{include.url}}">source code</a> of this project.
+{% endif %}
 Read more <a href="/about">about</a> me or <a href="#" class="contact">contact</a> me.</p></footer>
 
