@@ -109,7 +109,6 @@ label {
   padding-left: 55px;
   padding-right: 75px;
   padding-top: 1%;
-  display: table;
 }
 
 #title_background{
@@ -120,15 +119,18 @@ label {
   background-size: cover;
   height: 100%;
   width: 100%;
-  display: table-cell;
+  display: table;
   text-align: center;
   box-shadow: 0 0 8px 8px #202020 inset;
 }
 
-h1.title{
-  color: #6bfff4;
+#title_home{
   display: table-cell;
   vertical-align: middle;
+}
+
+h1.title{
+  color: #6bfff4;
 }
 
 .showing {
