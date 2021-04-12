@@ -62,7 +62,7 @@ label {
   height: 100%;
   right: 0;
   left: 0;
-  background-color: #202020;
+  background-color: #202024;
   color: #c0c0cc;
   z-index: 2;
   transition: transform .5s ease-in-out, padding-right .5s ease-in-out;
@@ -121,7 +121,7 @@ label {
   width: 100%;
   display: table;
   text-align: center;
-  box-shadow: 0 0 8px 8px #202020 inset;
+  box-shadow: 0 0 8px 8px #202024 inset;
 }
 
 #title_home{
