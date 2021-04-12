@@ -126,10 +126,12 @@ label {
   display: table-cell;
   vertical-align: middle;
   text-shadow: 3px 3px 10px #202024;
+  padding-left: 0;
 }
 
 h1.title{
   color: #6bfff4;
+  padding-left: 75px;
 }
 
 .showing {
