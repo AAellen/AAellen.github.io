@@ -125,7 +125,7 @@ label {
 #title_home{
   display: table-cell;
   vertical-align: middle;
-  text-shadow: 3px 3px 10px black;
+  text-shadow: 3px 3px 10px #202024;
 }
 
 h1.title{
