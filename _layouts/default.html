@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		{% include head.html %}
 		{% if page.title == "AAellen"%}
 		<title>AAellen</title>
+		<script>// Image pool to select from
+			var images = [
+				'clouds.jpg', 'spiral.jpg', 'mountains.jpg', 'trees.jpg'
+			];
+			
+			// Pick a random image
+			var maxImages = images.length;
+			var rand = Math.floor(Math.random() * maxImages);
+			var image = images[rand];
+			
+			 // Set image as background
+			console.log("set background image: " + image);
+			document.getElementById("title_background").style.backgroundImage="url('{{ site.baseurl }}/assets/img"+image+"')";
+				</script>
 		{% else %}
 		<title>AAellen - {{ page.title }}</title>
 		{% endif %}
-		{% include head.html %}
+		
 	</head>
 	<body>
 		<aside>
@@ -41,7 +56,7 @@
 				<span class="bar bottom"></span>
 			</label>
 
-			<div class="content">
+			<div class="sliding_content">
 				{% if page.title == "AAellen" %}
 				<div id="title_container">
 				<div id="title_background">
@@ -51,7 +66,9 @@
 				{% else %}
 				<h1 class="title">{{ page.title }}</h1>
 				{% endif %}
+				<div class="content">
 				{{ content }}
+				</div>
 				{% include footer.html %}
 			</div>
 

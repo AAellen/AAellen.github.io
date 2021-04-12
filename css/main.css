@@ -1,5 +1,3 @@
----
----
 body, html {
   margin: 0;
   padding: 0;
@@ -55,7 +53,7 @@ label {
   transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in, color .5s ease-in;
 }
 
-.content {
+.sliding_content {
   top: 0;
   bottom: 0;
   position: relative;
@@ -68,10 +66,10 @@ label {
   transition: transform .5s ease-in-out, padding-right .5s ease-in-out;
   padding-left:20px;
 }
-.content a{
+.sliding_content a{
   color: inherit;
 }
-.content footer{
+.sliding_content footer{
   font-size: 12px;
   margin: 2.5%;
   margin-bottom: 0;
@@ -85,6 +83,10 @@ label {
   bottom: 0;
   left: 0;
   background-color: inherit;
+}
+
+.content{
+  padding-left:5%;
 }
 
 .project_source{
@@ -113,7 +115,6 @@ label {
 
 #title_background{
   position:relative;
-  background-image: url("{{ site.baseurl }}/assets/img/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -223,7 +224,7 @@ footer.aside a:hover {
 input[type="checkbox"] {
   display: none;
 }
-input[type="checkbox"]:checked ~ .content {
+input[type="checkbox"]:checked ~ .sliding_content {
   transform: translateX(max(20%, 145px));
   padding-right: max(20%, 145px);
 }
