@@ -5,6 +5,8 @@
 		{% if page.title == "AAellen"%}
 		<title>AAellen</title>
 		<script>// Image pool to select from
+		window.addEventListener('load', function () {
+
 			var images = [
 				'clouds.jpg', 'spiral.jpg', 'mountains.jpg', 'trees.jpg'
 			];
@@ -16,7 +18,8 @@
 			
 			 // Set image as background
 			console.log("set background image: " + image);
-			document.getElementById("title_background").style.backgroundImage="url('{{ site.baseurl }}/assets/img"+image+"')";
+			document.getElementById("title_background").style.backgroundImage="url('{{ site.baseurl }}/assets/img/"+image+"')";
+		})
 				</script>
 		{% else %}
 		<title>AAellen - {{ page.title }}</title>
