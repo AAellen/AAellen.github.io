@@ -1,3 +1,5 @@
+---
+---
 body, html {
   margin: 0;
   padding: 0;
@@ -7,10 +9,11 @@ body, html {
 }
 
 body a{
-  transition: color .3s .15s ease-in;
+  transition: color 1.5s ease-out;
   text-decoration: underline;
 }
 body a:hover{
+  transition: color 0.5s ease-in;
   color: #6bfff4;
 }
 
@@ -59,7 +62,7 @@ label {
   height: 100%;
   right: 0;
   left: 0;
-  background-color: #202020;
+  background-color: #202024;
   color: #c0c0cc;
   z-index: 2;
   transition: transform .5s ease-in-out, padding-right .5s ease-in-out;
@@ -75,7 +78,7 @@ label {
   padding-top: 3px;
   padding-left: 1%;
   padding-right: 1%;
-  border-top: 2px solid #35363a;
+  border-top: 1px dashed #35363a;
   color: #8b8b92;
   width: 95%;
   position: fixed;
@@ -84,14 +87,50 @@ label {
   background-color: inherit;
 }
 
+.project_source{
+  font-size: 12px;
+  color: #8b8b92;
+  width: 95%;
+  border-top: 2px dashed #35363a;
+  border-bottom: 2px dashed #35363a;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 0.5%;
+}
+
 .project_desc{
   color: #ccccf0;
 }
-.title{
+
+
+#title_container{
+  width: 100%;
+  height: 30%;
+  padding-left: 55px;
+  padding-right: 75px;
+  padding-top: 1%;
+}
+
+#title_background{
+  position:relative;
+  background-image: url("{{ site.baseurl }}/assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: table;
+  text-align: center;
+  box-shadow: 0 0 8px 8px #202024 inset;
+}
+
+#title_home{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1.title{
   color: #6bfff4;
-  margin-left: 55px;
-  padding-top: 8px;
-  padding-right: 12px;
 }
 
 .showing {

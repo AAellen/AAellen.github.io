@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>AAellen</title><!---page.title--->
+		{% if page.title == "AAellen"%}
+		<title>AAellen</title>
+		{% else %}
+		<title>AAellen - {{ page.title }}</title>
+		{% endif %}
 		{% include head.html %}
 	</head>
 	<body>
@@ -13,8 +17,9 @@
 		<hr class="aside"></hr>
 
 		{% for post in site.posts %}
+		{%if page.url != post.url%}
 		<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
-		<!---title="{{ post.title }}"--->
+		{% endif %}
 		{% endfor %}
 
 		<hr class="aside" id="contact"></hr>
@@ -37,9 +42,17 @@
 			</label>
 
 			<div class="content">
+				{% if page.title == "AAellen" %}
+				<div id="title_container">
+				<div id="title_background">
+					<h1 class="title" id="title_home">{{ page.title }}</h1>
+				</div>
+				</div>
+				{% else %}
 				<h1 class="title">{{ page.title }}</h1>
+				{% endif %}
 				{{ content }}
-				<footer>Read more <a href="/about">about</a> me or <a href="#" class="contact">contact</a> me</p></footer>
+				{% include footer.html %}
 			</div>
 
 		</section>

@@ -9,6 +9,7 @@ name: AAellen # portfolio
 markdown: kramdown
 lsi:         false
 permalink:   "/:title"
+url: "https://aaellen.github.io/" 
 
 kramdown:
   ## for german: "sbquo,lsquo,bdquo,ldquo"
@@ -17,10 +18,8 @@ kramdown:
 plugins:
   - jemoji
 
-## personalize your slide show
-title:       AAellen
-author:      AAellen
-description: A portfollio of projects that I have done
+title: AAellen
+author: AAellen
 theme: jekyll-theme-cayman
 #excerpt_separator: <!--more-->
 
