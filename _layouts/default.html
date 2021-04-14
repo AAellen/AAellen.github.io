@@ -2,13 +2,11 @@
 <html>
 	<head>
 		{% include head.html %}
-		{% if page.title == "AAellen"%}
-		<script src="{{site.baseurl}}/assets/js/set_background.js"></script>
-		<title>AAellen</title>
-		{% else %}
-		<title>AAellen - {{ page.title }}</title>
-		{% endif %}
-		
+		{% for inc in page.js_includes}
+		<script src="{{site.baseurl}}/assets/js/{{inc}}.js"></script>
+		{% endfor %}
+
+		<title>{{ page.title_prefix }}{{ page.title }}</title>		
 	</head>
 	<body>
 		<section>
