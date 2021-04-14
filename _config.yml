@@ -18,7 +18,7 @@ kramdown:
 plugins:
   - jemoji
 
-title: AAellen
+#title: AAellen
 author: AAellen
 theme: jekyll-theme-cayman
 #excerpt_separator: <!--more-->
