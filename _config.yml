@@ -26,7 +26,11 @@ theme: jekyll-theme-cayman
 sass:
   style:     :compressed
 
-## solarized variant (dark/light)
-solarized:
-  theme:     dark
-theme: jekyll-theme-minimal
+  defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      js_includes: []
+      title_prefix: "AAellen - "
