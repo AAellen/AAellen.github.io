@@ -168,22 +168,22 @@ hr.aside{
   border-bottom: none;
 }
 
-footer.aside{
+#contact{
   text-align: right;
   margin-right: 5px;
   color: #c0c0cc;
 }
-footer.aside h3{
+#contact h3{
   font-weight: inherit;
   margin-top: 0px;
   margin-bottom: 5px;
 }
-footer.aside ul{
+#contact ul{
   margin: 0px;
   list-style-type: none;
   padding-left: 0;
 }
-footer.aside a{
+#contact a{
   padding: 0;
   display: block;
   color: #c0c0cc;
@@ -192,7 +192,7 @@ footer.aside a{
   position: relative;
   transition: font-size .3s ease-in;
 }
-footer.aside a:hover {
+#contact a:hover {
   color: #6bfff4;
   font-size: 16px;
 }
