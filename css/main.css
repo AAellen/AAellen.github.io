@@ -92,7 +92,7 @@ label {
   padding-left:5%;
 }
 
-.project-source{
+.project_source{
   font-size: 12px;
   color: #8b8b92;
   width: 95%;
@@ -103,7 +103,7 @@ label {
   padding-left: 0.5%;
 }
 
-.project-desc{
+.project_desc{
   color: #ccccf0;
 }
 
