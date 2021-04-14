@@ -10,16 +10,4 @@
 <!--Scripts for animating the contact link-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $(document).ready(function () {
-    $("a.contact").click(function () {
-        $("input:checkbox").prop('checked', true);
-      setTimeout(function(){
-        $('#contact h3').animate({color: "#6cfff4", fontSize:"2rem"}, 200 );
-      }, 300);
-      setTimeout(function(){
-        $('#contact h3').animate({color: "#c0c0cc", fontSize:"1.75rem"}, 1000);
-      }, 1000);
-    });
-  });
-</script>
+<script src="{{site.baseurl}}/assets/js/contact_animation.js"></script>
