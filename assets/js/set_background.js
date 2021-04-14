@@ -12,5 +12,5 @@ $(document).ready(function(){
      // Set image as background
     console.log("Setting background image: " + image);
     var baseUrl = window.location.origin;
-    document.getElementById("title_background").style.backgroundImage=`url('${baseUrl}/${image}')`;
+    document.getElementById("title-background").style.backgroundImage=`url('${baseUrl}/${image}')`;
 });
