@@ -27,43 +27,42 @@
 		
 	</head>
 	<body>
-		<aside>
-		<ul class="asideList">
-		<li><a href="/" class="asideItem">Home</a></li>
-		<li><a href="/projects" class="asideItem">Projects</a></li>
-
-		<hr class="aside"></hr>
-
-		{% for post in site.posts %}
-		{%if page.url != post.url%}
-		<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
-		{% endif %}
-		{% endfor %}
-
-		<hr class="aside" id="contact"></hr>
-		<li><a href="/about" class="asideItem">About Me</a></li>
-		</ul>
-		<footer class="aside" id="contact">
-			<h3>Contact</h3>
-			<ul>
-				<li><a href="mailto:aaellen01@gmail.com">Email</a></li>
-				<li><a href="https://github.com/aaellen">GitHub</a></li>
-			</ul>
-		</footer>
-		</aside>
 		<section>
-			<input type="checkbox" id="myInput">
-			<label for="myInput">
+			<input type="checkbox" id="checkbox-aside">
+			<label for="checkbox-aside">
 				<span class="bar top"></span>
 				<span class="bar middle"></span>
 				<span class="bar bottom"></span>
 			</label>
-
-			<div class="sliding_content">
+			<aside>
+				<ul class="asideList">
+				<li><a href="/" class="asideItem">Home</a></li>
+				<li><a href="/projects" class="asideItem">Projects</a></li>
+		
+				<hr class="aside"></hr>
+		
+				{% for post in site.posts %}
+				{%if page.url != post.url%}
+				<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
+				{% endif %}
+				{% endfor %}
+		
+				<hr class="aside" id="contact"></hr>
+				<li><a href="/about" class="asideItem">About Me</a></li>
+				</ul>
+				<div class="aside" id="contact">
+					<h3>Contact</h3>
+					<ul>
+						<li><a href="mailto:aaellen01@gmail.com">Email</a></li>
+						<li><a href="https://github.com/aaellen">GitHub</a></li>
+					</ul>
+				</div>
+			</aside>
+			<div class="sliding-content">
 				{% if page.title == "AAellen" %}
-				<div id="title_container">
-				<div id="title_background">
-					<h1 class="title" id="title_home">{{ page.title }}</h1>
+				<div id="title-container">
+				<div id="title-background">
+					<h1 class="title" id="home-title">{{ page.title }}</h1>
 				</div>
 				</div>
 				{% else %}
