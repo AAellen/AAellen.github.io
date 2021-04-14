@@ -29,7 +29,6 @@ sass:
 defaults:
 -
   scope:
-    path: ""
     type: "pages"
   values:
     js_includes: []
