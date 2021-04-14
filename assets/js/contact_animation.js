@@ -5,7 +5,7 @@ $(document).ready(function () {
         if(!checkbox.checked)
         {
             delay= delay+700;
-            checkbox.prop('checked', true);
+            checkbox.checked = true;
         }
         setTimeout(function(){
             $('#contact h3').animate({color: "#6cfff4", fontSize:"2rem"}, 200 );
