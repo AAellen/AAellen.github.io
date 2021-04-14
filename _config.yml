@@ -26,11 +26,11 @@ theme: jekyll-theme-cayman
 sass:
   style:     :compressed
 
-  defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      js_includes: []
-      title_prefix: "AAellen - "
+defaults:
+-
+  scope:
+    path: ""
+    type: "pages"
+  values:
+    js_includes: []
+    title_prefix: "AAellen - "
