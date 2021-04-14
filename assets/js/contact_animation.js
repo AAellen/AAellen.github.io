@@ -1,10 +1,10 @@
 $(document).ready(function () {
     $("a.contact").click(function () {
         var checkbox = document.getElementById("checkbox-aside");
-        var delay = 300;
+        var delay = 200;
         if(!checkbox.checked)
         {
-            delay= delay+500;
+            delay= delay+700;
             checkbox.prop('checked', true);
         }
         setTimeout(function(){
