@@ -4,7 +4,7 @@ $(document).ready(function () {
         var delay = 200;
         if(!checkbox.checked)
         {
-            delay= delay+700;
+            delay = delay+700;
             checkbox.checked = true;
         }
         setTimeout(function(){
