@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{% include head.html %}
-		{% if page.title == "AAellen"%}
-		<script src="{{site.baseurl}}/assets/js/set_background.js"></script>
-		<title>AAellen</title>
-		{% else %}
-		<title>AAellen - {{ page.title }}</title>
-		{% endif %}
-		
+		{% include head.html js=page.js_includes %}
+
 	</head>
 	<body>
 		<section>

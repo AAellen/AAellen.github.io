@@ -18,7 +18,7 @@ kramdown:
 plugins:
   - jemoji
 
-title: AAellen
+#title: AAellen
 author: AAellen
 theme: jekyll-theme-cayman
 #excerpt_separator: <!--more-->
@@ -26,7 +26,10 @@ theme: jekyll-theme-cayman
 sass:
   style:     :compressed
 
-## solarized variant (dark/light)
-solarized:
-  theme:     dark
-theme: jekyll-theme-minimal
+defaults:
+-
+  scope:
+    type: "pages"
+  values:
+    js_includes: []
+    title_prefix: "AAellen - "
