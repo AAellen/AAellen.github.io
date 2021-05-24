@@ -4,8 +4,8 @@ root{
   --lgrey: #c0c0cc;
   --mgrey: #35363a;
   --dgrey: #202024;
-
 }
+
 body, html {
   margin: 0;
   padding: 0;
@@ -304,25 +304,21 @@ hr.aside{
 
 .logo-slide > h1:before {
   content: "</";
-  text-align: center;
   display: inline-block;
   background-color: var(--dgrey);
   transition: .5s ease-in;
   transform: translateX(5em);
-  /* border: red solid 1px; */
   padding-left: 5em;
   }
 
 .logo-slide > h1:after {
   content: ">";
-  text-align: center;
   display: inline-block;
   background-color: var(--dgrey);
+  transition: .5s ease-in;
   transform: translateX(100%);
-  /* transform: translateX(3em); */
   }
 .logo-slide:hover > h1 {
-/*     background-color: blue; */
   transform: translateX(0);
 }  
 .logo-slide:hover > h1:before {
@@ -331,7 +327,7 @@ hr.aside{
 }
 
 .logo-slide:hover > h1:after {
-  z-index: inherit;
+  transform: translateX(0);  
 }
 
 /*For windows with small width*/
