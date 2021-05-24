@@ -1,3 +1,284 @@
+root{
+  --bmain: #6bfff4;
+  --bgrey: #8b8b92;
+  --lgrey: #c0c0cc;
+  --mgrey: #35363a;
+  --dgrey: #202024;
+
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Monaco', monospace;
+}
+
+body a{
+  transition: color 1.5s ease-out;
+  text-decoration: underline;
+}
+body a:hover{
+  transition: color 0.5s ease-in;
+  color: var(--bmain);
+}
+
+.aside-container {
+  background-color: var(--mgrey);
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 100%;
+  transition: width .5s ease-in, visibility 0s .25s ease-in, opacity .2s ease-in;
+  z-index: 2;
+}
+
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dgrey);
+  overflow: hidden;
+}
+
+label {
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  z-index: 3;
+  position: fixed;
+}
+
+.bar {
+  display: block;
+  background-color: var(--mgrey);
+  width: 35px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+  transition: background-color .5s ease-in, transform .5s ease-in, width .5s ease-in, color .5s ease-in, box-shadow .5s ease-in;
+  box-shadow: 0 0 2px 2px var(--dgrey);
+}
+
+.sliding-content {
+  top: 0;
+  bottom: 0;
+  position: relative;
+  height: 100%;
+  right: 0;
+  left: 0;
+  background-color: var(--dgrey);
+  color: var(--lgrey);
+  z-index: 0;
+  transition: transform .5s ease-in-out, padding-right .5s ease-in-out;
+}
+.sliding-content a{
+  color: inherit;
+}
+.sliding-content footer{
+  font-size: 12px;
+  margin: 2.5%;
+  margin-bottom: 2px;
+  padding-top: 3px;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-top: 1px dashed var(--mgrey);
+  color: var(--bgrey);
+  width: 95%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: inherit;
+}
+
+.content{
+  padding-left:5%;
+}
+
+.project_source{
+  font-size: 12px;
+  color: var(--bgrey);
+  width: 95%;
+  border-top: 2px dashed var(--mgrey);
+  border-bottom: 2px dashed var(--mgrey);
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 0.5%;
+}
+
+.project_desc{
+  color: #ccccf0;
+}
+
+
+#title-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 75px; */
+  width: 100%;
+  height: 35%;
+}
+
+#title-background{
+  position:relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: table;
+  text-align: center;
+  box-shadow: 0 0 20px 2px var(--dgrey) inset;
+}
+
+#home-title{
+  display: table-cell;
+  vertical-align: middle;
+  text-shadow: 3px 3px 10px var(--dgrey);
+  padding-left: 0;
+}
+
+h1.title{
+  color: var(--bmain);
+  padding-left: 75px;
+}
+
+.showing {
+  position: relative;
+  margin-top: 25px;
+  list-style-type: none;
+}
+.showing li{
+  margin-top: 15px;
+  font-size:15px;
+}
+.showing a{
+  font-size:25px;
+}
+
+
+h1 {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  color: #ccccf0;
+  font-weight: 750;
+}
+
+hr.aside{
+  border-top: 2px dashed var(--bmain);
+  background-color: none;
+  width: 50%;
+  padding:0;
+  height:0;
+  border-bottom: none;
+}
+
+#contact{
+  text-align: right;
+  margin-right: 5px;
+  color: var(--lgrey);
+}
+#contact h3{
+  font-weight: inherit;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+#contact ul{
+  margin: 0px;
+  list-style-type: none;
+  padding-left: 0;
+}
+#contact a{
+  padding: 0;
+  display: block;
+  color: var(--lgrey);
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: font-size .3s ease-in;
+}
+#contact a:hover {
+  color: var(--bmain);
+  font-size: 16px;
+}
+
+.asideList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  text-align: center;
+  border-top: 2px solid var(--bmain);
+  border-bottom: 2px solid var(--bmain);
+}
+
+.asideItem {
+  padding: 15px 0;
+  display: block;
+  color: var(--lgrey);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: color .3s .15s ease-in, font-size .3s ease-in;
+}
+.small{
+  padding: 5px 0;
+}
+.asideItem:hover {
+  font-size: 22px;
+}
+
+#checkbox-aside {
+  display: none;
+}
+#checkbox-aside:checked ~ .sliding-content {
+  transform: translateX(max(20%, 145px));
+  padding-right: max(20%, 145px);
+}
+#checkbox-aside:checked ~ .aside-container {
+  opacity: 1;
+  visibility: visible;
+  width: 20%;
+  transition-delay:0s;
+}
+#checkbox-aside:checked ~ .title {
+  margin-left: 0;
+}
+#checkbox-aside:checked ~ label .bar {
+  background-color: var(--lgrey);
+  box-shadow: none;
+}
+#checkbox-aside:checked ~ label .top {
+  -webkit-transform: translateY(0px) rotateZ(45deg);
+  -moz-transform: translateY(0px) rotateZ(45deg);
+  -ms-transform: translateY(0px) rotateZ(45deg);
+  -o-transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(45deg);
+}
+#checkbox-aside:checked ~ label .bottom {
+  -webkit-transform: translateY(-15px) rotateZ(-45deg);
+  -moz-transform: translateY(-15px) rotateZ(-45deg);
+  -ms-transform: translateY(-15px) rotateZ(-45deg);
+  -o-transform: translateY(-15px) rotateZ(-45deg);
+  transform: translateY(-15px) rotateZ(-45deg);
+}
+#checkbox-aside:checked ~ label .middle {
+  width: 0;
+}
+
+.middle {
+  margin: 0 auto;
+  width:100%;
+}
+
 .logo-slide {
   background-color: inherit;
   position: relative;
@@ -25,7 +306,7 @@
   content: "</";
   text-align: center;
   display: inline-block;
-  background-color: #202024;
+  background-color: var(--dgrey);
   transition: .5s ease-in;
   transform: translateX(5em);
   /* border: red solid 1px; */
@@ -36,7 +317,7 @@
   content: ">";
   text-align: center;
   display: inline-block;
-  background-color: #202024;
+  background-color: var(--dgrey);
   transform: translateX(100%);
   /* transform: translateX(3em); */
   }
@@ -51,4 +332,15 @@
 
 .logo-slide:hover > h1:after {
   z-index: inherit;
+}
+
+/*For windows with small width*/
+@media only screen and (max-width:750px){
+  #checkbox-aside:checked ~ .aside-container {
+    width: 100%;
+  }
+  #checkbox-aside:checked ~ .sliding-content {
+    transform: translateX(100%);
+    padding-right: 0;
+  }
 }
