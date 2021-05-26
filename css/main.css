@@ -134,12 +134,12 @@ label {
 }
 
 
-.gen-logo-slide{
-/*   display: none;
-   */}
+/* .gen-logo-slide{
+  display: none;
+  }
 .gen-logo-side:before{
   content: "loading...";
-}
+} */
 .logo-slide {
   background-color: inherit;
   position: relative;
@@ -149,7 +149,7 @@ label {
   text-align: center;
 }
 .logo-slide > *{
-    margin: 0;
+  margin: 0;
   transition: .5s ease-in-out;
   display: inline-block;
   position: relative;
