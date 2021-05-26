@@ -27,9 +27,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         outside(null);
         
         // slide in text on mouse hover
-        container.addEventListener("mouseover", function( event ){
-            var fullW = text.offsetWidth;
-    
+        container.addEventListener("mouseover", function( event ){    
             text.style.transform="translateX(0)";
             text.style.opacity="1";
     
@@ -42,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         // slide out text when mouse leaves and when page is first loaded    
         function outside(event){
-        var W = text.offsetWidth
+            var W = text.offsetWidth
             text.style.transform=""; // reset back to default defined in .css file
             text.style.opacity = "0";
             before.style.paddingLeft=`${W}px`;
