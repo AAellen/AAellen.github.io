@@ -1,4 +1,4 @@
-root{
+* {
   --bmain: #6bfff4;
   --bgrey: #8b8b92;
   --lgrey: #c0c0cc;
@@ -12,6 +12,14 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: 'Monaco', monospace;
+}
+
+.noselect {
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 body a{
@@ -125,23 +133,39 @@ label {
   height: 35%;
 }
 
-#title-background{
-  position:relative;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  display: table;
+
+.gen-logo-slide{
+/*   display: none;
+   */}
+.gen-logo-side:before{
+  content: "loading...";
+}
+.logo-slide {
+  background-color: inherit;
+  position: relative;
+  margin: 0;
+  width: auto;
+  height: fit-content;
   text-align: center;
-  box-shadow: 0 0 20px 2px var(--dgrey) inset;
+}
+.logo-slide > *{
+    margin: 0;
+  transition: .5s ease-in-out;
+  display: inline-block;
+  position: relative;
 }
 
-#home-title{
-  display: table-cell;
-  vertical-align: middle;
-  text-shadow: 3px 3px 10px var(--dgrey);
-  padding-left: 0;
+.logo-slide-before{
+  background-color: var(--dgrey);
+  z-index: 4;
+}
+.logo-slide-text{
+  transform: translateX(-100%);
+  display:none;
+  z-index:3;
+}
+.logo-slide-after{
+  z-index:4;
 }
 
 h1.title{
@@ -279,56 +303,6 @@ hr.aside{
   width:100%;
 }
 
-.logo-slide {
-  background-color: inherit;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: fit-content;
-}
-.logo-slide *{
-  transition: .5s ease-in;
-}
-
-.logo-slide > * {
-  margin: 0;
-  position: absolute;
-  display: inline-block;
-  width: 100%;
-  height: auto;
-}
-
-.logo-slide > h1{
-  transform: translateX(-5em);
-}
-
-.logo-slide > h1:before {
-  content: "</";
-  display: inline-block;
-  background-color: var(--dgrey);
-  transition: .5s ease-in;
-  transform: translateX(5em);
-  padding-left: 5em;
-  }
-
-.logo-slide > h1:after {
-  content: ">";
-  display: inline-block;
-  background-color: var(--dgrey);
-  transition: .5s ease-in;
-  transform: translateX(100%);
-  }
-.logo-slide:hover > h1 {
-  transform: translateX(0);
-}  
-.logo-slide:hover > h1:before {
-  transform: translateX(0);
-  padding-left: 0;
-}
-
-.logo-slide:hover > h1:after {
-  transform: translateX(0);  
-}
 
 /*For windows with small width*/
 @media only screen and (max-width:750px){
