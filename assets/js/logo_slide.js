@@ -1,5 +1,4 @@
 function setHitbox(container, hitbox, before, after, beforeW, opening){
-    console.log(opening)
     var rect = container.getBoundingClientRect();
     hitbox.style.top = "0px";
     hitbox.style.height = `${rect.height}px`
@@ -67,7 +66,6 @@ function setHitbox(container, hitbox, before, after, beforeW, opening){
     
         // slide in text on mouse hover
         hitbox.addEventListener("mouseover", function( event ){ 
-            console.log("in")
             text.style.transform="translateX(0)";
             text.style.opacity="1";
     
@@ -83,9 +81,7 @@ function setHitbox(container, hitbox, before, after, beforeW, opening){
         hitbox.addEventListener("mouseout", () => outside());
     
         // slide out text when mouse leaves and when page is first loaded    
-        function outside(){
-            console.log("out")
-    
+        function outside(){    
             var W = text.offsetWidth
             text.style.transform=`translateX(-${W}px)`; // reset back to default defined in .css file
             text.style.opacity = "0.1";
