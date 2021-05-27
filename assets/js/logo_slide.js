@@ -33,21 +33,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             text.style.transition="";
             after.style.transition="";
         }, 10);
-        
-        var insideTimer;
-        var outsideTimer;
   
         // slide in text on mouse hover
         container.addEventListener("mouseenter", function( event ){ 
-            clearTimeout(outsideTimer);
-    
-            insideTimer= setTimeout(()=> {
             text.style.transform="translateX(0)";
             text.style.opacity="1";
     
             before.style.paddingLeft="0";
             after.style.transform = "";
-            }, 100);
     
         }, false);
     
@@ -55,16 +48,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
         // slide out text when mouse leaves and when page is first loaded    
         function outside(){
-            clearTimeout(insideTimer);
-    
-            outsideTimer = setTimeout(() => {
             var W = text.offsetWidth
             text.style.transform=""; // reset back to default defined in .css file
             text.style.opacity = "0";
             before.style.paddingLeft=`${W-before.offsetWidth}px`;
             after.style.transform=`translateX(-${W}px)`;
-    
-            }, 100)
         }
     
         logos[i].remove();
