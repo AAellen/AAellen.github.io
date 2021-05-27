@@ -167,6 +167,12 @@ label {
 .logo-slide-after{
   z-index:4;
 }
+.logo-slide-hitbox{
+  position: absolute;
+  /* border: red solid 1px; */
+  z-index: 4; 
+  transition: none;
+}
 
 h1.title{
   color: var(--bmain);
