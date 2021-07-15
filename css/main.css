@@ -143,35 +143,19 @@ label {
 .logo-slide {
   background-color: inherit;
   position: relative;
-  margin: 0;
-  width: auto;
+  display:flex;
   height: fit-content;
-  text-align: center;
 }
 .logo-slide > *{
   margin: 0;
-  transition: .5s ease-in-out;
-  display: inline-block;
-  position: relative;
+  transition: all .5s ease-in;
+  flex: 0 0 auto;
 }
-
 .logo-slide-before{
-  background-color: var(--dgrey);
-  z-index: 4;
+  z-index:2;
 }
 .logo-slide-text{
-  transform: translateX(-100%);
-  display:none;
-  z-index:3;
-}
-.logo-slide-after{
-  z-index:4;
-}
-.logo-slide-hitbox{
-  position: absolute;
-  /* border: red solid 1px; */
-  z-index: 4; 
-  transition: none;
+  z-index:1;
 }
 
 h1.title{
@@ -318,5 +302,8 @@ hr.aside{
   #checkbox-aside:checked ~ .sliding-content {
     transform: translateX(100%);
     padding-right: 0;
+  }
+  h1{
+    font-size: 32px;
   }
 }
