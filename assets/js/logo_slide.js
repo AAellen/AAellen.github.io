@@ -1,5 +1,4 @@
-  
-  window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', (event) => {
     // find all places to put a logo slide
     var logos =document.getElementsByClassName("gen-logo-slide");
     for(let i=0; i<logos.length; i++){
@@ -33,8 +32,8 @@
         let textW = text.offsetWidth;
         container.style.width=`${before.offsetWidth+after.offsetWidth}px`;
         outside();
-
-				// now reset transitions after everything is in the correct starting place
+		
+        // now reset transitions after everything is in the correct starting place
         setTimeout(()=>{
             before.style.transition="";
             text.style.transition="";
@@ -64,12 +63,8 @@
           text.style.opacity="0";
           text.style.transform=`translateX(-${textW}px)`;
           text.style.transition = "all .5s ease-in, opacity .3s ease-in";
-
         }
-
-    
         logos[i].remove();
     }
-  
   });
   
