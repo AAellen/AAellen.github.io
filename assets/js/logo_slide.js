@@ -1,3 +1,9 @@
+function is_touch_enabled() {
+    return ( 'ontouchstart' in window ) || 
+           ( navigator.maxTouchPoints > 0 ) || 
+           ( navigator.msMaxTouchPoints > 0 );
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
     // find all places to put a logo slide
     var logos =document.getElementsByClassName("gen-logo-slide");
@@ -31,7 +37,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         
         let textW = text.offsetWidth;
         container.style.width=`${before.offsetWidth+after.offsetWidth}px`;
-        outside();
+        if (is_touch_enabled()){
+            show();
+        }else{
+            hide();
+        }
 		
         // now reset transitions after everything is in the correct starting place
         setTimeout(()=>{
@@ -42,11 +52,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // slide in text on mouse hover
         container.addEventListener("mouseover", function( event ){
           if (event.target.className!=text.className){
-              text.style.transform="translateX(0)";
-              text.style.width=`${textW}px`;
-              text.style.opacity="1";
-              container.style.width="auto";
-              text.style.transition = "all .5s ease-in, opacity .3s .2s ease-in";
+              show();
           }
         }, false);
         
@@ -54,11 +60,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
           let clss=event.relatedTarget.className.split(' ')[0];
           let classes = ["logo-slide", "logo-slide-before", "logo-slide-text", "logo-slide-after"]
           if(!classes.includes(clss)){
-            outside();
+            hide();
           }
         }, false);
         
-        function outside(){           
+
+        function show(){
+            text.style.transform="translateX(0)";
+            text.style.width=`${textW}px`;
+            text.style.opacity="1";
+            container.style.width="auto";
+            text.style.transition = "all .5s ease-in, opacity .3s .2s ease-in";
+        }
+        function hide(){           
           text.style.width="0px";
           text.style.opacity="0";
           text.style.transform=`translateX(-${textW}px)`;
