@@ -43,7 +43,6 @@ body a:hover{
   z-index: 2;
 }
 
-
 section {
   position: relative;
   width: 100%;
@@ -133,13 +132,6 @@ label {
   height: 30%;
 }
 
-
-/* .gen-logo-slide{
-  display: none;
-  }
-.gen-logo-side:before{
-  content: "loading...";
-} */
 .logo-slide {
   background-color: inherit;
   position: relative;
@@ -176,7 +168,6 @@ ul.showing li{
 ul.showing a{
   font-size:25px;
 }
-
 
 h1 {
   position: relative;
