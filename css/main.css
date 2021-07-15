@@ -163,16 +163,17 @@ h1.title{
   padding-left: 75px;
 }
 
-.showing {
+ul.showing {
   position: relative;
   margin-top: 25px;
   list-style-type: none;
+  padding-left: 5vw;
 }
-.showing li{
+ul.showing li{
   margin-top: 15px;
   font-size:15px;
 }
-.showing a{
+ul.showing a{
   font-size:25px;
 }
 
