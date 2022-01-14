@@ -2,7 +2,6 @@
 <html>
 	<head>
 		{% include head.html js=page.js_includes %}
-
 	</head>
 	<body>
 		<section>
@@ -18,13 +17,11 @@
 				<li><a href="/projects" class="asideItem">Projects</a></li>
 		
 				<hr class="aside"></hr>
-		
 				{% for post in site.posts %}
 				{%if page.url != post.url%}
 				<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
 				{% endif %}
 				{% endfor %}
-		
 				<hr class="aside"></hr>
 				<li><a href="/about" class="asideItem">About Me</a></li>
 				</ul>
