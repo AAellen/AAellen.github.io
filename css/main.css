@@ -293,6 +293,10 @@ hr.aside{
   width:100%;
 }
 
+iframe{
+  min-width: 80vw;
+  min-height: 80vh;
+}
 
 /*For windows with small width*/
 @media only screen and (max-width:750px){

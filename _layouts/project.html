@@ -13,3 +13,9 @@ title_prefix: "Project: "
 <h2 class="project_desc">{{ page.project_desc }}</h2>
 
 {{ content }}
+
+
+{% if page.project_embed != nil %}
+<iframe src="{{ page.project_embed }}" title="hello"></iframe>
+<p>{{page.project_embed}}</p>
+{% endif %}
