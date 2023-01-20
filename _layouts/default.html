@@ -20,6 +20,8 @@
 				{% for post in site.posts %}
 				{%if page.url != post.url%}
 				<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
+				{%else%}
+				<li><a class="asideItem small currentAside" >{{ post.title }}</a></li>
 				{% endif %}
 				{% endfor %}
 				<hr class="aside"></hr>
