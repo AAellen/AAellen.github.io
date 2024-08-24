@@ -22,6 +22,9 @@ body, html {
             user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.display-none{
+  display:none;
+}
 body a{
   transition: color 1.5s ease-out;
   text-decoration: underline;
@@ -46,9 +49,10 @@ body a:hover{
 section {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: var(--dgrey);
-  overflow: hidden;
+  /* overflow: hidden; */
+  padding-bottom:30px;
 }
 
 label {
@@ -89,8 +93,8 @@ label {
 }
 .sliding-content footer{
   font-size: 12px;
-  margin: 2.5%;
-  margin-bottom: 2px;
+  margin-top: 2.5%;
+  margin-bottom: 0;
   padding-top: 3px;
   padding-left: 1%;
   padding-right: 1%;
