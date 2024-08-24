@@ -22,6 +22,9 @@ body, html {
             user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.display-none{
+  display:none;
+}
 body a{
   transition: color 1.5s ease-out;
   text-decoration: underline;
