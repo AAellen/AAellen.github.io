@@ -1,32 +1,51 @@
-div.img-container{
-    display:grid;
-    --d: 25s;
-    overflow-x: hidden;
-    width:100%;
+div.img-container {
+    display: flex;
+    flex-flow: row wrap;
+    /* overflow-x: hidden; */
+    /* width:100%; */
     padding: 5%;
     justify-content: center;
     align-items: center;
 
-
 }
 
-div.img-container>img{
-    max-width: 100%;
-    max-height: 100%;
-    grid-area: 1/1;
-    animation: cycle var(--d) linear infinite;
-    
+div.img-container>img {
+    margin: 1%;
+    max-width: 40%;
+    max-height: 60dvh;
 }
 
-@keyframes cycle{
-    0%   {transform: translate(200%);scale: 30%; opacity: 0; z-index: 3;}
-    50%  {transform: translate(0); scale: 100%; opacity: 1; z-index: 5;}
-    100% {transform: translate(-200%); scale: 30%;opacity: 0; z-index: 1;}
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+        div.img-container {
+            flex-flow: column nowrap;
+        }
+
+        div.img-container>img {
+            animation: cycle cubic-bezier(0.4, 0, 0.2, 1) both;
+            animation-timeline: view();
+            animation-range: entry 0% exit 100%;
+            max-width: 80%;
+            max-height: 60dvh;
+
+        }
+    }
 }
 
-img
-div.img-container>img:nth-child(1) {animation-delay: calc(0*var(--d)/-4);}
-div.img-container>img:nth-child(2) {animation-delay: calc(1*var(--d)/-4);}
-div.img-container>img:nth-child(3) {animation-delay: calc(2*var(--d)/-4);}
-div.img-container>img:nth-child(4) {animation-delay: calc(3*var(--d)/-4);}
-  
+@keyframes cycle {
+    0% {
+        scale: 30%;
+        opacity: 0;
+    }
+
+    50% {
+        scale: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 30%;
+        opacity: 0;
+    }
+}
