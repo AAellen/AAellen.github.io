@@ -1,0 +1,27 @@
+canvas#hero{
+    /* filter: blur(2px); */
+    width: 90dvw;
+    height: 90dvh;
+    position: absolute;
+}
+
+h1#hero{
+    font-size: 3rem;
+    animation-timeline: scroll;
+
+}
+
+.project{
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    padding: 2%;
+    margin: 5%;
+}
+
+.project a{
+    font-size: 2rem;
+    text-decoration: none;
+}
