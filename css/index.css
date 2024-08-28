@@ -5,10 +5,10 @@ canvas#hero{
     position: absolute;
 }
 
-h1#hero{
-    font-size: 3rem;
-    animation-timeline: scroll;
-
+#hero h1{
+    font-size: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .project{
@@ -24,4 +24,22 @@ h1#hero{
 .project a{
     font-size: 2rem;
     text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
 }
+
+.project a:hover{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width:550px){
+    div#hero{
+        height: 100dvh;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #hero h1{
+        backdrop-filter: blur(2px);
+    }
+  }

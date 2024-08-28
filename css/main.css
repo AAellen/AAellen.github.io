@@ -3,6 +3,7 @@
   --main: #63a8ff;
   --lmain: #6bfff4;
 --bg: #cecece;
+--grey: #999999;
 --fg: #202028;
 
 }
@@ -13,7 +14,8 @@
   :root{
   /* --main: #63a8ff;
   --lmain: #6bfff4; */
-  --fg: #ababab;
+  --fg: #cccccc;
+  --grey: #999999;
   --bg: #202028;
   }
 }
@@ -39,12 +41,12 @@ body, html {
   display:none;
 }
 body a{
-  transition: color 1.5s ease-out;
+  transition: color background-color 0.5s ease-out;
   text-decoration: underline;
   color: var(--main);
 }
 body a:hover{
-  transition: color 0.5s ease-in;
+  transition: color background-color 0.1s ease-in;
   color: var(--lmain);
 }
 
@@ -63,6 +65,19 @@ body a:hover{
   color: var(--lmain);
   margin: 5px;
   
+}
+
+div.project_content{
+  padding: 2%;
+  color: var(--fg);
+}
+
+body{
+  display: flex;
+  flex-flow: column nowrap;
+}
+#container{
+  flex-grow: 2;
 }
 
 footer{
@@ -93,10 +108,10 @@ footer li{
 
 .project_source{
   font-size: 12px;
-  color: var(--bgrey);
-  width: 95%;
-  border-top: 2px dashed var(--mgrey);
-  border-bottom: 2px dashed var(--mgrey);
+  color: var(--grey);
+  /* width: 95%; */
+  border-top: 2px dashed var(--grey);
+  border-bottom: 2px dashed var(--grey);
   padding-top: 2px;
   padding-bottom: 5px;
   padding-left: 0.5%;
@@ -114,7 +129,7 @@ footer li{
 
 h1{
   color: var(--main);
-  /* padding-left: 75px; */
+  font-size: 2.5rem;
   position: relative;
   text-align: center;
   font-weight: 750;
