@@ -2,8 +2,21 @@
 layout: default
 title: "AAellen"
 title_prefix: ""
-js_includes: ["logo_slide"]
+js_includes: ["bubbles"]
+css_includes: ["index"]
 ---
-<br/>
-<h2 class="project_desc">Welcome to my Portfolio.</h2>
-<p>Click the ≡ icon in the top left to navigate.<br/>Or view an overview of <a href="/projects">all showcased projects</a>.</p>
+
+<div id="hero">
+    <h1>Hi, I'm Alex</h1>
+</div>
+
+<div id="projects">
+    {% for post in site.posts %}
+    <div class="project">
+        <a href="{{ post.url }}" title="View Project: {{ post.title }}">
+            {{ post.title }}</a>
+        <br/>
+        <p>{{ post.project_desc }}</p>
+        </div>
+    {% endfor %}
+</div>

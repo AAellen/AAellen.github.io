@@ -1,0 +1,13 @@
+canvas#hero{
+    border-radius: 5px;
+    
+    box-shadow: 0px 0px 10px #6bfff4;
+    width: 50dvw;
+    height: 50dvh;
+}
+
+div#canvas-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
