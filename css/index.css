@@ -2,7 +2,7 @@ canvas#hero{
     /* filter: blur(2px); */
     width: 90dvw;
     height: 90dvh;
-    position: absolute;
+    position: fixed;
 }
 
 #hero h1{

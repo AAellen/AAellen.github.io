@@ -1,13 +1,26 @@
 class Bubble{
     constructor(){
-        this.r = Math.random() * 3 + 1;
+        this.r = Math.random() * 10 + 3;
         this.x = this.r + Math.random() * (canvas.width-2*this.r);
         this.y = this.r + Math.random() * (canvas.height-2*this.r);
         this.dx = SPEED * (Math.random()-0.5);
         this.dy = SPEED * (Math.random()-0.5);
+        this.ddx = 0;
+        this.ddy = 0;
     }
 
     update(){
+
+        // update velocities
+
+        this.dx += this.ddx;
+        this.dy += this.ddy;
+
+        this.ddx =0; 
+        this.ddy =0; 
+
+
+        // update positions
         let newx = this.x + this.dx;
         let newy = this.y + this.dy;
 
@@ -21,13 +34,29 @@ class Bubble{
         }
 
         this.x = newx;
-        this.y = newy;        
+        this.y = newy;
+
+        // // drag
+        if(this.dx > 1){
+        this.dx *=0.95;
+        this.dy *=0.95;
+        }
+
+    }
+    addForce(fx, fy){
+        this.ddx += fx/this.r;
+        this.ddy += fy/this.r;
+    }
+    steerForce(dirx, diry){
+        this.ddx += (dirx- this.dx) / this.r;
+        this.ddy += (diry- this.dy)/this.r;
     }
 
     dist(other){
-        let distx = this.x - other.x;
-        let disty = this.y - other.y;
-        return Math.sqrt(distx*distx + disty*disty);
+        let diffx = this.x - other.x;
+        let diffy = this.y - other.y;
+        let dist = Math.sqrt(diffx*diffx + diffy*diffy);
+        return {dirx: diffx/dist, diry: diffy/dist, dist};
     }
     draw(){
         ctx.beginPath();
@@ -39,19 +68,51 @@ class Bubble{
 
 function draw(bubbles){
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    bubbles.forEach(bbl => {
-        bbl.draw();
-
-        bubbles.forEach(other =>{
-            if(bbl.dist(other) < DIST_THRESHOLD){
+    for(let i=0; i<bubbles.length; i++){
+        ctx.lineWidth = 1;
+        bubbles[i].draw();
+        for(let j=i+1; j<bubbles.length; j++){
+            let {dirx, diry, dist} = bubbles[i].dist(bubbles[j]);
+            if (dist < DIST_DRAW){
+                ctx.lineWidth = (DIST_DRAW-dist)*Math.min(bubbles[i].r, bubbles[j].r)/DIST_DRAW;
                 ctx.beginPath();
-                ctx.moveTo(bbl.x, bbl.y);
-                ctx.lineTo(other.x, other.y);
+                ctx.moveTo(bubbles[i].x, bubbles[i].y);
+                ctx.lineTo(bubbles[j].x, bubbles[j].y);
                 ctx.stroke();
+
+                if (dist < 1.2*(bubbles[i].r + bubbles[j].r)){
+                    bubbles[i].addForce(dirx*BOUNCE_FORCE, diry*BOUNCE_FORCE);
+                    bubbles[j].addForce(-dirx*BOUNCE_FORCE, -diry*BOUNCE_FORCE);
+                }
+                // else{
+                //     bubbles[i].steerForce(dirx*REPEL_FORCE, diry*REPEL_FORCE);
+                //     bubbles[j].steerForce(-dirx*REPEL_FORCE, -diry*REPEL_FORCE);
+
+                // }
+
+            }else if (dist < DIST_ATTRACT){
+                // bubbles[i].steerForce(-dirx*ATTRACT_FORCE, -diry*ATTRACT_FORCE);
+                // bubbles[j].steerForce(dirx*ATTRACT_FORCE, diry*ATTRACT_FORCE);
             }
-        })
+        }
+    }
+    // bubbles.forEach(bbl => {
+    //     bbl.draw();
+
+    //     bubbles.forEach(other =>{
+    //         if(bbl.dist(other) < DIST_THRESHOLD){
+
+    //             // draw line and start pushing away force
+    //             bbl.addForce()
+
+    //             ctx.beginPath();
+    //             ctx.moveTo(bbl.x, bbl.y);
+    //             ctx.lineTo(other.x, other.y);
+    //             ctx.stroke();
+    //         }
+    //     })
         
-    });
+    // });
 }
 
 function animate(bubbles){
@@ -62,8 +123,12 @@ function animate(bubbles){
     draw(bubbles);
 }
 
-let DIST_THRESHOLD = 50;
+let DIST_DRAW = 100;
+let DIST_ATTRACT = 15000;
 let SPEED = 0.5;
+let ATTRACT_FORCE = 0.5;
+let REPEL_FORCE = 0.05;
+let BOUNCE_FORCE = 5;
 let ctx;
 let canvas;
 
@@ -72,18 +137,26 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas = document.querySelector("canvas");
 
     ctx = canvas.getContext('2d');
-    setTimeout(()=>{
+
+    // setTimeout(()=>{
+        canvas.width = canvas.getBoundingClientRect().width;
+        canvas.height = canvas.getBoundingClientRect().height;
+        // change colour after size change
         ctx.strokeStyle = '#6bfff4';
         ctx.fillStyle = '#6bfff4';    
-        canvas.width = canvas.getBoundingClientRect().width;
-        canvas.height = canvas.getBoundingClientRect().height;    
-    }, 100);
+        
+
+        let bubbles = [];
+        for (let i = 0; i < 50; i++) {
+            bubbles.push(new Bubble());
+        }
+        
+        animate(bubbles);
+
+    // }, 1);
 
 
-    let bubbles = [];
-    for (let i = 0; i < 100; i++) {
-        bubbles.push(new Bubble());
-    }
+    
 
     window.onresize = (e)=>{
         console.log(e);
@@ -99,36 +172,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 bbl.x = canvas.width - bbl.r;
             }
             if (bbl.y > canvas.height){
-                bbl.x = canvas.height - bbl.r;
+                bbl.y = canvas.height - bbl.r;
             }
         });
     }
-
-
-    // let prevScrollPosition = window.scrollY;
-    // let scrolling  = false;
-    // window.onscroll = (ev)=>{
-    //     let scrollPosition = window.scrollY;
-
-    //     if (!scrolling) {
-    //         window.requestAnimationFrame(() => {
-
-    //             let dy = scrollPosition - prevScrollPosition;
-    //             dy *= 0.01;
-    //             console.log(dy);
-    //             bubbles.forEach(bbl=>{
-    //                 bbl.y += dy;
-    //             });
-
-    //     scrolling = false;
-    //     });
-    //     scrolling = true;
-    // }
-
-    // }
-
-
-    animate(bubbles);
-
-
 });
