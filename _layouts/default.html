@@ -4,49 +4,23 @@
 		{% include head.html js=page.js_includes css=page.css_includes %}
 	</head>
 	<body>
-		<section>
-			<input type="checkbox" id="checkbox-aside">
-			<label for="checkbox-aside">
-				<span class="bar top"></span>
-				<span class="bar middle"></span>
-				<span class="bar bottom"></span>
-			</label>
-			<div class="aside-container">
-				<ul class="asideList">
-				<li><a href="/" class="asideItem">Home</a></li>
-				<li><a href="/projects" class="asideItem">Projects</a></li>
-		
-				<hr class="aside"></hr>
-				{% for post in site.posts %}
-				{%if page.url != post.url%}
-				<li><a class="asideItem small" href="{{ post.url }}" >{{ post.title }}</a></li>
-				{% endif %}
-				{% endfor %}
-				<hr class="aside"></hr>
-				<li><a href="/about" class="asideItem">About Me</a></li>
-				</ul>
-				<div class="aside" id="contact">
-					<h3>Contact</h3>
-					<ul>
-						<li><a href="mailto:aaellen01@gmail.com">Email</a></li>
-						<li><a href="https://github.com/aaellen">GitHub</a></li>
-					</ul>
-				</div>
+			<div id="nav">
+				<a href="/">Home</a>
+				<a href="/#projects">Projects</a>
+				<a href="#contact">Contact</a>
+
 			</div>
-			<div class="sliding-content">
+			<div id="project_container">
+
 				{% if page.title == "AAellen" %}
-				<div id="title-container">
-					<div class="gen-logo-slide" id="h1">AAellen</div>
-				</div>
+				<canvas id="hero" width="500" height="500"></canvas>
 				{% else %}
 				<h1 class="title">{{ page.title }}</h1>
 				{% endif %}
-				<div class="content">
+				<div class="project_content">
 				{{ content }}
 				</div>
-				{% include footer.html %}
 			</div>
-
-		</section>
+			{% include footer.html %}
 	</body>
 </html>
